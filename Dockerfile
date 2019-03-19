@@ -6,7 +6,7 @@ RUN npm install
 COPY ./ /app/
 ARG configuration=production
 RUN npm run build -- --output-path=./dist/out --configuration $configuration
-COPY ./nginx.conf /nginx.conf
+COPY ./nginx-custom.conf /nginx.conf
 
 # Stage 1, based on Nginx, to have only the compiled app, ready for production with Nginx
 FROM nginx:1.15
