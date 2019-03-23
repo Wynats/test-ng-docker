@@ -1,0 +1,13 @@
+version: '3'
+services:
+  proxy:
+    build: ./
+    networks:
+      - xchappi
+    ports:
+      - 80:80
+
+networks:
+  xchappi:
+    external:
+      name: xchappi_default

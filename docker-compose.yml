@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   app:
-    image: 'prueba-ng'
+    image: 'xchappi'
     build: '.'
     ports:
-      - 3000:80
+      - 80:80
