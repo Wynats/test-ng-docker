@@ -1,18 +1,16 @@
 version: '3.1'
 
 services:
+  nginx:
+    image: nginx
+    build: '.'
+    ports:
+      - 3000:80
+    restart: always
+
   reverseproxy:
     image: 'reverseproxy'
     build: './proxy'
     ports:
       - 80:80
-    restart: always
-
-  test:
-    image: 'test'
-    build: '.'
-    ports:
-      - 3000:80
-    depends_on:
-      - reverseproxy
     restart: always
