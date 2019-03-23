@@ -1,10 +1,4 @@
 FROM nginx:1.15
 
-#  default conf for proxy service
-COPY ./default.conf /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# NOT FOUND response
-COPY ./not-found.html /var/www/html/not-found.html
-
-# Proxy configurations
-COPY ./includes/ /etc/nginx/includes/

@@ -1,10 +1,18 @@
 version: '3.1'
 
 services:
+  reverseproxy:
+    image: 'reverseproxy'
+    build: './proxy'
+    ports:
+      - 80:80
+    restart: always
+
   app:
     image: 'xchappi'
     build: '.'
-    volumes:
-      - .:/usr/share/nginx/html/
     ports:
-      - 80:80
+      - 3000:80
+    depends_on:
+      - reverseproxy
+    restart: always
